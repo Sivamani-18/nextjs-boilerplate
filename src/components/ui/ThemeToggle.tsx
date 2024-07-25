@@ -11,16 +11,28 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ onThemeChange }) => {
 
   useEffect(() => {
     const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) {
-      setTheme(storedTheme);
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+    console.log('prefersDarkScheme', prefersDarkScheme);
+
+    const updateTheme = () => {
+      if (storedTheme) {
+        setTheme(prefersDarkScheme.matches ? 'dark' : storedTheme);
+      } else if (prefersDarkScheme.matches) {
+        setTheme('dark');
+      } else {
+        setTheme('light');
+      }
       onThemeChange(false); // Turn off loading after theme is loaded
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
-      onThemeChange(false); // Turn off loading after theme is loaded
-    } else {
-      setTheme('light');
-      onThemeChange(false); // Turn off loading after theme is loaded
-    }
+    };
+
+    updateTheme();
+
+    prefersDarkScheme.addEventListener('change', updateTheme);
+
+    return () => {
+      prefersDarkScheme.removeEventListener('change', updateTheme);
+    };
   }, [onThemeChange]);
 
   useEffect(() => {
