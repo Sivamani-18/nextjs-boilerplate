@@ -28,4 +28,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           build_command: 'npm run build'
-          publish_dir: 'build'
+          publish_dir: '.next'
