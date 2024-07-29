@@ -3,7 +3,6 @@
 This is a boilerplate project for building a Next.js application with TypeScript, Tailwind CSS, dynamic routes, and theme toggling (light/dark mode).
 
 ## Demo
-
 - <a href="https://sivamani-18.github.io/nextjs-boilerplate/" target="_blank">Example Demo Link</a>
 
 ## Features
