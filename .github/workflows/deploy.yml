@@ -26,6 +26,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: Sivamani-18/github-pages-action@v1.0.0
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           build_command: 'npm run build'
-          publish_dir: '.next'
+          publish_dir: 'build'
