@@ -9,6 +9,9 @@ const nextConfig = {
     ? 'https://sivamani-18.github.io/nextjs-boilerplate/'
     : undefined,
   trailingSlash: true,
+  publicRuntimeConfig: {
+    basePath: isProd ? '/nextjs-boilerplate' : '',
+  },
 };
 
 export default nextConfig;
