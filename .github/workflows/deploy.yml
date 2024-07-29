@@ -24,7 +24,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: Sivamani-18/github-pages-action@v1.0.1
+        uses: Sivamani-18/github-pages-action@v1.0.2
         with:
           token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           build_command: 'npm run build'
