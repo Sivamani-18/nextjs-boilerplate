@@ -12,7 +12,7 @@ This is a boilerplate project for building a Next.js application with TypeScript
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for rapid UI development.
 - Dynamic routes for blog posts.
 - Light and Dark mode theme toggling.
-- Loader displayed during theme transitions.
+- Loader displayed during theme transitions
 
 ## Getting Started
 
